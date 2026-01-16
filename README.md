@@ -90,6 +90,9 @@ Usage:
 > XA RECOVER;
 ```
 
+Intended use: after a database restart, but before accepting client connections, rollback all prepared
+transactions.
+
 ### PostgreSQL
 
 **Stored function: _.tpc_get_rollback_commands()**
@@ -105,6 +108,12 @@ Usage:
  ROLLBACK PREPARED 'empty-pg-1';
  ROLLBACK PREPARED 'empty-pg-2';
 ```
+
+Intended use: after a database restart, but before accepting client connections, rollback all prepared
+transactions.
+
+PostgreSQL doesn't support running `ROLLBACK` or `COMMIT` via `EXECUTE`, so you'll have to use this function
+to print the SQL statements, and then copy and run them manually.
 
 ## License
 

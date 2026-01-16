@@ -3,6 +3,8 @@ Cheatsheets and utilities for XA transactions
 
 ## MariaDB and PostgreSQL Cheatsheets
 
+**Transaction id formats**
+
 MariaDB transaction id formats:
 
 - `'string', 'string', int` (eg: `'trx229', '.db1', 1`)
@@ -11,7 +13,7 @@ MariaDB transaction id formats:
 
 PostgreSQL transaction id format: `'any string'`
 
-Two-phase transactions
+### Two-phase transactions
 
 | Action               | MariaDB (XA Standard)       | PostgreSQL (Native 2pc)
 | -------------------- | --------------------------- | -----------------------
@@ -21,16 +23,16 @@ Two-phase transactions
 | Commit (2nd Phase)   | `XA COMMIT <id>`            | `COMMIT PREPARED '<id>'`
 | Rollback             | `XA ROLLBACK <id>`          | `ROLLBACK` or `ROLLBACK PREPARED '<id>'`
 
-One-phase transactions
+### One-phase transactions
 
 | Action               | MariaDB (XA Standard)       | PostgreSQL (Native 2pc)
 | -------------------- | --------------------------- | -----------------------
 | Start Transaction    | `XA START <id>` or `START TRANSACTION` or `BEGIN` | `START TRANSACTION` or `BEGIN`
 | One-Phase Commit     | `XA COMMIT <id> ONE PHASE`  | `COMMIT`
 
-Recovery
+### Recovery
 
-MariaDB:
+**MariaDB**
 
 ```
 > XA RECOVER FORMAT = 'SQL';
@@ -44,7 +46,7 @@ MariaDB:
 > XA ROLLBACK <id>;
 ```
 
-PostgreSQL
+**PostgreSQL**
 
 ```
 > SELECT gid, prepared, owner, database  FROM pg_prepared_xacts;

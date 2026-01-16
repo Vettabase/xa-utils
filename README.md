@@ -12,6 +12,7 @@ MariaDB transaction id formats:
 Two-phase transactions
 
 | Action               | MariaDB (XA Standard)       | PostgreSQL (Native 2pc)
+| -------------------- | --------------------------- | -----------------------
 | Start Transaction    | `XA START <id>`             | `START TRANSACTION` or `BEGIN`
 | End Work Phase       | `XA END <id>`               | (not available)
 | Prepare Phase        | `XA PREPARE <id>`           | `PREPARE TRANSACTION '<id>'`
@@ -21,6 +22,7 @@ Two-phase transactions
 One-phase transactions
 
 | Action               | MariaDB (XA Standard)       | PostgreSQL (Native 2pc)
+| -------------------- | --------------------------- | -----------------------
 | Start Transaction    | `XA START <id>` or `START TRANSACTION` or `BEGIN` | `START TRANSACTION` or `BEGIN`
 | One-Phase Commit     | `XA COMMIT <id> ONE PHASE`  | `COMMIT`
 

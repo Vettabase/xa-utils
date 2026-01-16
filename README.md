@@ -60,6 +60,10 @@ PostgreSQL transaction id format: `'any string'`
 
 ## Utils
 
+The source code of the following utilities can be found in the `mariadb` and `postgresql` directories.
+It's meant to explain how to do things, or even to be used in your system, but it might require some
+manual change. No effort is made to make the code ready to use as-is.
+
 ### MariaDB
 
 **Table: _.xa_recover**

@@ -29,8 +29,12 @@ PostgreSQL transaction id format: `'any string'`
 
 | Action               | MariaDB (XA Standard)       | PostgreSQL (Native 2pc)
 | -------------------- | --------------------------- | -----------------------
-| Start Transaction    | `XA START <id>` or `START TRANSACTION` or `BEGIN` | `START TRANSACTION` or `BEGIN`
+| Start Transaction    | `XA START <id>`             | `START TRANSACTION` or `BEGIN`
 | One-Phase Commit     | `XA COMMIT <id> ONE PHASE`  | `COMMIT`
+
+MariaDB also supports regular transactional commands `START TRANSACTION`, `COMMIT`,
+and `ROLLBACK`. It also supports `BEGIN` as a synonym for `START TRANSACTIONS`, but
+it won't work in procedural SQL.
 
 ### Recovery
 

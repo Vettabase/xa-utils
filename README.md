@@ -9,6 +9,8 @@ MariaDB transaction id formats:
 - `'string', 'string'` (eg: `'trx229', '.db1'`)
 - `'string'` (eg: `'trx229'`)
 
+PostgreSQL transaction id format: `'any string'`
+
 Two-phase transactions
 
 | Action               | MariaDB (XA Standard)       | PostgreSQL (Native 2pc)

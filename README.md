@@ -84,6 +84,22 @@ Usage:
 > XA RECOVER;
 ```
 
+### PostgreSQL
+
+**Stored function: _.tpc_get_rollback_commands()**
+
+Usage:
+
+```
+=# SELECT _.tpc_get_rollback_commands();
+    tpc_get_rollback_commands    
+---------------------------------
+ ROLLBACK PREPARED 'trx3';
+ ROLLBACK PREPARED 'trx2';
+ ROLLBACK PREPARED 'empty-pg-1';
+ ROLLBACK PREPARED 'empty-pg-2';
+```
+
 ## License
 
 Copyright: Vettabase 2026

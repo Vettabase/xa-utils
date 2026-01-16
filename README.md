@@ -1,5 +1,7 @@
 # xa-utils
-Cheatsheets and utilities for XA transactions
+Cheatsheets and utilities for XA transactions.
+
+Currently all the contents refer to MariaDB and PostgreSQL. We might add more DBMSs.
 
 ## MariaDB and PostgreSQL Cheatsheets
 

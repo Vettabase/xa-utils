@@ -74,9 +74,9 @@ manual change. No effort is made to make the code ready to use as-is.
 
 **Table: _.xa_recover**
 
-This table uses the CONNECT storage engine and runs `XA RECOVER` locally. It can be used to filter and order
-the results. Also, `XA RECOVER` can't be used directly in stored procedures, because cursors only work
-with `SELECT`.
+This table uses the CONNECT storage engine to run `XA RECOVER` locally and return its results. It can
+be used to filter and order the results. Also, `XA RECOVER` can't be used directly in stored procedures,
+because cursors only work with `SELECT`.
 
 **Stored procedure: _.xa_rollback_all()**
 

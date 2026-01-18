@@ -112,7 +112,7 @@ In this case, though, the `information_schema.innodb_trx` table won't contain a 
 Requirements:
 
 - `performance_schema=1`;
-- `UPDATE performance_schema.setup_consumers SET ENABLED = 'YES' WHERE NAME LIKE 'events\_statements%';
+- `UPDATE performance_schema.setup_consumers SET ENABLED = 'YES' WHERE NAME LIKE 'events\_statements%';`
 - A sufficiently high `performance_schema_events_statements_history_size`.
 
 Usage:

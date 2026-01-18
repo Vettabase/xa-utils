@@ -72,6 +72,10 @@ manual change. No effort is made to make the code ready to use as-is.
 
 ### MariaDB
 
+**View: _.xa_engines**
+
+A subset of `information_schema.ENGINES` containing storage engines that support XA transactions.
+
 **Table: _.xa_recover**
 
 This table uses the [CONNECT](https://mariadb.com/docs/server/server-usage/storage-engines/connect/introduction-to-the-connect-engine)

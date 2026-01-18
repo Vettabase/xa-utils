@@ -98,6 +98,32 @@ Usage:
 Intended use: after a database restart, but before accepting client connections, rollback all prepared
 transactions.
 
+**Stored function: _.in_xa_transaction([connection_id])**
+
+MariaDB system tables don't distinguish regular transactions from XA transactions.
+`in_xa_transaction()` looks for the last XA command run by the specified connection (the current connection
+by default). If it's anything other than `XA COMMIT` or `XA ROLLBACK`, it assumes that an XA transaction is
+in progress. Note that it doesn't check if the connection is active, so the transaction might not be in
+progress. If in doubt, you'll have to check the processlist.
+
+Similarly to `in_transaction`, this function returns 1 even if the XA transaction didn't access any data.
+In this case, though, the `information_schema.innodb_trx` table won't contain a matching row.
+
+Requirements:
+
+- `performance_schema=1`;
+- `UPDATE performance_schema.setup_consumers SET ENABLED = 'YES' WHERE NAME LIKE 'events\_statements%';
+- A sufficiently high `performance_schema_events_statements_history_size`.
+
+Usage:
+
+```
+-- does the current connection have an active XA transaction?
+SELECT in_xa_transaction();
+-- does connection with id 24 have an active XA connection?
+SELECT in_xa_transaction(24);
+```
+
 ### PostgreSQL
 
 **Stored function: _.tpc_get_rollback_commands()**

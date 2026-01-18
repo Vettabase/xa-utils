@@ -74,9 +74,13 @@ manual change. No effort is made to make the code ready to use as-is.
 
 **View: _.xa_engines**
 
+[Code](mariadb/xa-engines.sql)
+
 A subset of `information_schema.ENGINES` containing storage engines that support XA transactions.
 
 **Table: _.xa_recover**
+
+[Code](mariadb/xa-rollback-all.sql)
 
 This table uses the [CONNECT](https://mariadb.com/docs/server/server-usage/storage-engines/connect/introduction-to-the-connect-engine)
 storage engine to run `XA RECOVER` locally and return its results. It can be used to filter and order
@@ -84,6 +88,8 @@ the results. Also, `XA RECOVER` can't be used directly in stored procedures, bec
 with `SELECT`.
 
 **Stored procedure: _.xa_rollback_all()**
+
+[Code](mariadb/xa-rollback-all.sql)
 
 Usage:
 
@@ -103,6 +109,8 @@ Intended use: after a database restart, but before accepting client connections,
 transactions.
 
 **Stored function: _.in_xa_transaction([connection_id])**
+
+[Code](mariadb/in-xa-transaction.sql)
 
 MariaDB system tables don't distinguish regular transactions from XA transactions.
 `in_xa_transaction()` looks for the last XA command run by the specified connection (the current connection
@@ -131,6 +139,8 @@ SELECT in_xa_transaction(24);
 ### PostgreSQL
 
 **Stored function: _.tpc_get_rollback_commands()**
+
+[Code](postgres/tpc-get-rollback-commands.sql)
 
 Usage:
 

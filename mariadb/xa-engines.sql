@@ -1,0 +1,5 @@
+CREATE SCHEMA IF NOT EXISTS _;
+
+CREATE OR REPLACE VIEW _.xa_engines AS
+    SELECT * FROM information_schema.ENGINES WHERE XA = 'YES'
+;

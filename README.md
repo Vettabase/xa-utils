@@ -13,6 +13,7 @@ This repository was originally created as bonus contents for this article: [Dist
 - MySQL
 - Oracle
 - PostgreSQL
+- SAP HANA
 - SQL Server
 - Sybase ASE
 

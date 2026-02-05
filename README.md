@@ -7,6 +7,17 @@ This repository was originally created as bonus contents for this article: [Dist
 
 ## MariaDB and PostgreSQL Cheatsheets
 
+**List of DBMSs that Support 2PC Transactions**
+
+- DB2
+- Informix (as a Transaction Manager)
+- MariaDB
+- MySQL
+- Oracle
+- PostgreSQL
+- SQL Server
+- Sybase ASE
+
 **Transaction id formats**
 
 MariaDB transaction id formats:

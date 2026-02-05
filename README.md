@@ -5,9 +5,7 @@ Currently all the contents refer to MariaDB and PostgreSQL. We might add more DB
 
 This repository was originally created as bonus contents for this article: [Distributed, Multi-Database Transactions Involving MariaDB and PostgreSQL](https://vettabase.com/distributed-multi-database-transactions-involving-mariadb-and-postgresql/).
 
-## MariaDB and PostgreSQL Cheatsheets
-
-**List of DBMSs that Support 2PC Transactions**
+## List of DBMSs that Support 2PC Transactions
 
 - DB2
 - Informix (as a Transaction Manager)
@@ -17,6 +15,8 @@ This repository was originally created as bonus contents for this article: [Dist
 - PostgreSQL
 - SQL Server
 - Sybase ASE
+
+## MariaDB and PostgreSQL Cheatsheets
 
 **Transaction id formats**
 
